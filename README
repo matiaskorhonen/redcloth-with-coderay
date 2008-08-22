@@ -1,0 +1,25 @@
+Extends Redcloth to parse the <source> tag and syntax highlight it. Sample input:
+
+    Hello, this is *textilized*. It also has <source>@inline_code_examples</source>!
+
+    What about a multi-line code sample?
+
+    <source:html>
+    <h1>Hello, world!</h1>
+    </source>
+    
+Which will return (indented for clarity):
+
+    <p>Hello, this is <strong>textilized</strong>. It also has <code class="inline_code">
+        <span class="iv">@inline_code_examples</span>
+    </code>!</p>
+
+    <p>What about a multi-line code sample?</p>
+
+    <pre><code class=\"multiline_code\">
+        <span class=\"ta\">&amp;lt;h1&amp;gt;</span>Hello, world!<span class=\"ta\">&amp;lt;/h1&amp;gt;</span>
+    </code></pre>
+
+This plugin overrides the built-in "textilize helper", just call it as usual, in a helper or a view:
+
+    <%= textilize(@post.body) %>
