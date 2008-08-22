@@ -1,4 +1,4 @@
-Extends Redcloth to parse the <source> tag and syntax highlight it. Sample input:
+Rails plugin that extends Redcloth to parse the <source> tag and syntax highlight it. Sample input:
 
     Hello, this is *textilized*. It also has <source>@inline_code_examples</source>!
 
