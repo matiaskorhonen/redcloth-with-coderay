@@ -31,6 +31,19 @@ class PluginTest < Test::Unit::TestCase
     assert result.include?(%Q{<pre><code class="multiline_code">})
   end
   
+  def test_one_liner_multiline_code
+    text = %Q{Hello, this is *textilized*.
+      
+    <source>
+    hello_to_you
+    </source>
+    }
+    result = RedCloth.new(text).to_html(:textile, :refs_syntax_highlighter)
+    
+    assert result.include?(%Q{<strong>textilized</strong>})
+    assert result.include?(%Q{<pre><code class=\"multiline_code\">hello_to_you</code></pre>})
+  end
+  
   def test_parsing_other_languages
     text = %Q{Hello, this is *textilized* with some <source:html><p>HTML code</p></source>!}
     result = RedCloth.new(text).to_html(:textile, :refs_syntax_highlighter)
