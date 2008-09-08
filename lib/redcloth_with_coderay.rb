@@ -8,13 +8,13 @@ module RedclothWithCoderay
   SINGLE_LINE = '<code class="inline_code">%s</code>'
   MULTI_LINE = '<pre><code class="multiline_code">%s</code></pre>'
   WRAPPER = '<notextile>%s</notextile>'
-  SOURCE_TAG_REGEXP = /([\t\n\r\f]?<source(?:\:([a-z]+))?>(.+?)<\/source>[\t\n\r\f]?)/m
+  SOURCE_TAG_REGEXP = /((:?\t\n)?<source(?:\:([a-z]+))?>(.+?)<\/source>(?:\t\n)?)/m
   
   def refs_syntax_highlighter(text)
     text.gsub!(SOURCE_TAG_REGEXP) do |m|
       all_of_it = $~[1]
-      lang = ($~[2] || :ruby).to_sym
-      code = $~[3].strip
+      lang = ($~[3] || :ruby).to_sym
+      code = $~[4].strip
       
       wrap_in = all_of_it.contains_newlines? ? MULTI_LINE : SINGLE_LINE
       highlighted = wrap_in % CodeRay.scan(code, lang).div(:wrap => nil, :css => :class)
