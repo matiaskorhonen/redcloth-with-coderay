@@ -1,22 +1,11 @@
+require 'rubygems'
 require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require 'echoe'
 
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the translated plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
-
-desc 'Generate documentation for the translated plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Translated'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+Echoe.new('redclothcoderay', '0.1.0') do |p|
+  p.description    = "Integrates CodeRay with RedCloth by adding a <source> tag."
+  p.url            = "http://redclothcoderay.rubyforge.org/"
+  p.author         = "August Lilleaas"
+  p.email          = "augustlilleaas@gmail.com"
+  p.runtime_dependencies = ['RedCloth', 'coderay']
 end
