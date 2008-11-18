@@ -16,12 +16,14 @@ Installation as usual:
  
 == Using
 
+You have to specify that you want to use refs_syntax_highlighter when calling RedCloth#to_html.
+
  require 'rubygems'
  require 'redcloth'
  require 'coderay'
  require 'redclothcoderay'
  
- RedCloth.new('I am *bold* and <source>@hi_tech</source>').to_html
+ RedCloth.new('I am *bold* and <source>@hi_tech</source>').to_html(:textile, :refs_syntax_highlighter)
 
 == Example
 
