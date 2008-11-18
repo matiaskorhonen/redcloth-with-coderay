@@ -1,0 +1,9 @@
+*0.1.1 (November 18th 2008)
+
+* Removed any references to Rails
+
+* Updated documentation.
+
+*0.1.0 (November 18th 2008)
+
+* Converted the plugin into a gem.
