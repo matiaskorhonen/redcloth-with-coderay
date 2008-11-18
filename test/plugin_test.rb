@@ -8,7 +8,8 @@ require 'action_controller/test_process'
 
 current_directory = File.dirname(__FILE__)
 $:.unshift File.join(current_directory, '..', 'lib')
-require File.join(current_directory, '..', 'init')
+require 'redcloth_with_coderay'
+
 
 class PluginTest < Test::Unit::TestCase
   def test_parsing_inline_code
