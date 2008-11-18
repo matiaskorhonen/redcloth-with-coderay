@@ -3,9 +3,6 @@ require 'redcloth'
 require 'coderay'
 require 'test/unit'
 
-require 'action_controller'
-require 'action_controller/test_process'
-
 current_directory = File.dirname(__FILE__)
 $:.unshift File.join(current_directory, '..', 'lib')
 require 'redcloth_with_coderay'
