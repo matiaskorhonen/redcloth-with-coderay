@@ -1,4 +1,5 @@
 class String
+  # Utility method to check if a string contains newlines.
   def contains_newlines?
     self =~ /\n/
   end
@@ -10,6 +11,7 @@ module RedclothWithCoderay
   WRAPPER = '<notextile>%s</notextile>'
   SOURCE_TAG_REGEXP = /([\t\n]?<source(?:\:([a-z]+))?>(.+?)<\/source>[\t\n]?)/m
   
+  # The RedCloth extension that performs the syntax highlighting.
   def refs_syntax_highlighter(text)
     text.gsub!(SOURCE_TAG_REGEXP) do |m|
       all_of_it = $~[1]
