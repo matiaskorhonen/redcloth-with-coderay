@@ -24,6 +24,16 @@ You have to specify that you want to use refs_syntax_highlighter when calling Re
  require 'redcloth_with_coderay'
  
  RedCloth.new('I am *bold* and <source>@hi_tech</source>').to_html(:textile, :refs_syntax_highlighter)
+ 
+== In Ruby on Rails
+
+Ruby on Rails provides you with a textilize helper. You probably want to override it. Something like this is probably sensible:
+
+ module ApplicationHelper
+   def textilize(text)
+     RedCloth.new(text).to_html(:textile, :refs_syntax_highlighter)
+   end
+ end
 
 == Example
 
