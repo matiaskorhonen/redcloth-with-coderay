@@ -1,25 +1,48 @@
-Rails plugin that extends Redcloth to parse the <source> tag and syntax highlight it. Sample input:
+== Redcloth with CodeRay
 
-    Hello, this is *textilized*. It also has <source>@inline_code_examples</source>!
+Adds CodeRay syntax highlighting support to RedCloth, with a 'source' tag. See the examples below.
 
-    What about a multi-line code sample?
+A short summary of what you can do:
 
-    <source:html>
-    <h1>Hello, world!</h1>
-    </source>
+* <source>foo</source> - Use this tag to produce CodeRay highlighted HTML for the contents within that tag. The language defaults to Ruby.
+* <source:css>foo</source> - Highlight as usual, but highlight as CSS. Supports everything CodeRay supports. Refer to the CodeRay documentation for a list of supported languages.
+
+== Installing
+
+Installation as usual:
+
+ sudo gem install redcloth
+ 
+ 
+== Using
+
+ require 'rubygems'
+ require 'redcloth'
+ require 'coderay'
+ require 'redclothcoderay'
+ 
+ RedCloth.new('I am *bold* and <source>@hi_tech</source>').to_html
+
+== Example
+
+This input:
+
+ Hello, this is *textilized*. It also has <source>@inline_code_examples</source>!
+ 
+ What about a multi-line code sample?
+ 
+ <source:html>
+ <h1>Hello, world!</h1>
+ </source>
     
-Which will return (indented for clarity):
+produces this output (indented for clarity):
 
-    <p>Hello, this is <strong>textilized</strong>. It also has <code class="inline_code">
-        <span class="iv">@inline_code_examples</span>
-    </code>!</p>
-
-    <p>What about a multi-line code sample?</p>
-
-    <pre><code class=\"multiline_code\">
-        <span class=\"ta\">&amp;lt;h1&amp;gt;</span>Hello, world!<span class=\"ta\">&amp;lt;/h1&amp;gt;</span>
-    </code></pre>
-
-This plugin overrides the built-in "textilize helper", just call it as usual, in a helper or a view:
-
-    <%= textilize(@post.body) %>
+ <p>Hello, this is <strong>textilized</strong>. It also has <code class="inline_code">
+   <span class="iv">@inline_code_examples</span>
+ </code>!</p>
+ 
+ <p>What about a multi-line code sample?</p>
+ 
+ <pre><code class=\"multiline_code\">
+   <span class=\"ta\">&amp;lt;h1&amp;gt;</span>Hello, world!<span class=\"ta\">&amp;lt;/h1&amp;gt;</span>
+ </code></pre>
