@@ -2,15 +2,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{redclothcoderay}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["August Lilleaas"]
   s.date = %q{2008-11-18}
   s.description = %q{Integrates CodeRay with RedCloth by adding a <source> tag.}
   s.email = %q{augustlilleaas@gmail.com}
-  s.extra_rdoc_files = ["lib/redcloth_with_coderay/customized_textile_helper.rb", "lib/redcloth_with_coderay/redcloth_extension.rb", "lib/redcloth_with_coderay.rb", "README"]
-  s.files = ["lib/redcloth_with_coderay/customized_textile_helper.rb", "lib/redcloth_with_coderay/redcloth_extension.rb", "lib/redcloth_with_coderay.rb", "Manifest", "MIT-LICENSE", "Rakefile", "README", "test/redclothcoderay_test.rb", "redclothcoderay.gemspec"]
+  s.extra_rdoc_files = ["CHANGELOG", "lib/redcloth_with_coderay.rb", "README"]
+  s.files = ["CHANGELOG", "lib/redcloth_with_coderay.rb", "Manifest", "MIT-LICENSE", "Rakefile", "README", "redclothcoderay.gemspec", "test/redclothcoderay_test.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://redclothcoderay.rubyforge.org/}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Redclothcoderay", "--main", "README"]
