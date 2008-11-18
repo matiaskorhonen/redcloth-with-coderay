@@ -11,7 +11,7 @@ A short summary of what you can do:
 
 Installation as usual:
 
- sudo gem install redcloth
+ sudo gem install redclothcoderay
  
  
 == Using
