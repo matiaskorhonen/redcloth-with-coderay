@@ -45,8 +45,18 @@ class PluginTest < Test::Unit::TestCase
   def test_parsing_other_languages
     text = %Q{Hello, this is *textilized* with some <source:html><p>HTML code</p></source>!}
     result = RedCloth.new(text).to_html(:textile, :refs_syntax_highlighter)
-    
+
     assert result.include?(%Q{<strong>textilized</strong>})
     assert result.include?(%Q{<code class="inline_code"><span class="ta">&lt;p&gt;</span>HTML code<span class="ta">&lt;/p&gt;</span></code>})
+  end
+  
+  def test_after_a_header
+    text = %Q{h2. Hello, world.
+
+<source>
+hello_world
+</source>}
+    result = RedCloth.new(text).to_html(:textile, :refs_syntax_highlighter)
+    assert result.include?(%Q{<h2>Hello, world.</h2>})
   end
 end
