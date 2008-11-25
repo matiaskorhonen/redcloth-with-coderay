@@ -1,3 +1,9 @@
+*0.1.2 (November 25th 2008)
+
+* Fixed some issues with whitespaces before <source> tags
+
+* Removed String#has_newlines?, doing it "by hand" instead.
+
 *0.1.1 (November 18th 2008)
 
 * Removed any references to Rails
