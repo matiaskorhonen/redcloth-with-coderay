@@ -5,7 +5,7 @@ require 'test/unit'
 
 current_directory = File.dirname(__FILE__)
 $:.unshift File.join(current_directory, '..', 'lib')
-require 'redcloth_with_coderay'
+require 'redclothcoderay'
 
 
 class PluginTest < Test::Unit::TestCase

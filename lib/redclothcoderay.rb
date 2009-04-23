@@ -1,4 +1,4 @@
-module RedclothWithCoderay
+module RedclothCoderay
   SINGLE_LINE = '<code class="inline_code">%s</code>'
   MULTI_LINE = '<pre><code class="multiline_code">%s</code></pre>'
   SOURCE_TAG_REGEXP = /(([\t\n])?<source(?:\:([a-z]+))?>(.+?)<\/source>[\t\n]?)/m
@@ -19,4 +19,4 @@ module RedclothWithCoderay
   end
 end
 
-RedCloth.class_eval { include RedclothWithCoderay }
+RedCloth.class_eval { include RedclothCoderay }
