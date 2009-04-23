@@ -15,6 +15,10 @@ Gem::Specification.new do |s|
     ["redclothcoderay.gemspec",
     "README",
     "Rakefile",
-    "lib/redcloth_with_coderay.rb",
-    "tests/redclothcoderay_test.rb"]
+    "lib/redclothcoderay.rb",
+    "test/redclothcoderay_test.rb",
+    "test/always_on_3_test.rb",
+    "test/always_on_4_test.rb",
+    "test/coderay_options_test.rb",
+    "test/test_helper.rb"]
 end
