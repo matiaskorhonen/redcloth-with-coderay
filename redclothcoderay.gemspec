@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.add_dependency('RedCloth')
   s.add_dependency('coderay')
-  s.description = "Integrates CodeRay with RedCloth by adding a <source> tag."
+  s.summary = "Integrates CodeRay with RedCloth by adding a <source> tag."
   s.homepage = "http://redclothcoderay.rubyforge.org"
   s.extensions = ["Rakefile"]
   s.files =
