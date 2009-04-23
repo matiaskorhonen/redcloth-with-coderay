@@ -28,6 +28,10 @@ You have to specify that you want to use refs_syntax_highlighter when calling Re
 You can also use the always_on method to always use the refs_syntax_highlighter parser when calling to_html
 
   RedclothCoderay.always_on
+  
+You can specify the CodeRay options, too (defaults to RedclothCoderay::CODERAY_OPTIONS).
+
+  RedclothCoderay.coderay_options :line_numbers => :table
  
 == In Ruby on Rails
 
