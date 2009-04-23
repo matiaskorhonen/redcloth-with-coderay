@@ -1,11 +1,7 @@
-require 'rubygems'
 require 'rake'
-require 'echoe'
 
-Echoe.new('redclothcoderay', '0.1.2') do |p|
-  p.description    = "Integrates CodeRay with RedCloth by adding a <source> tag."
-  p.url            = "http://redclothcoderay.rubyforge.org/"
-  p.author         = "August Lilleaas"
-  p.email          = "augustlilleaas@gmail.com"
-  p.runtime_dependencies = ['RedCloth', 'coderay']
+task :default => [:test]
+
+task :test do
+  load "test/redclothcoderay_test.rb"
 end
