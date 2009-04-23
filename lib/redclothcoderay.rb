@@ -17,6 +17,23 @@ module RedclothCoderay
       "#{whitespace_before}<notextile>#{highlighted}</notextile>"
     end
   end
+  
+  # Adds the syntax highlighter to all RedCloth#to_htmls, so that you don't have to
+  # do that to_html(:textile, :refs_syntax_highlighter) thin.
+  def self.always_on
+    if RedCloth::VERSION.to_s < "4"
+      RedCloth::DEFAULT_RULES << :refs_syntax_highlighter
+    else
+      RedCloth::TextileDoc.class_eval {
+        alias :_to_html :to_html
+        
+        def to_html(*rules)
+          rules << :refs_syntax_highlighter
+          _to_html(*rules)
+        end
+      }
+    end
+  end
 end
 
 RedCloth.class_eval { include RedclothCoderay }

@@ -1,12 +1,6 @@
-require 'rubygems'
+require 'test_helper'
 require 'redcloth'
-require 'coderay'
-require 'test/unit'
-
-current_directory = File.dirname(__FILE__)
-$:.unshift File.join(current_directory, '..', 'lib')
 require 'redclothcoderay'
-
 
 class PluginTest < Test::Unit::TestCase
   def test_parsing_inline_code
