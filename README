@@ -13,6 +13,9 @@ Installation as usual:
 
  sudo gem install redclothcoderay
  
+You can also install the gem via github, to get the latest HEAD.
+
+ sudo gem install augustl-redclothcoderay --source=http://gems.github.com/
  
 == Using
 
