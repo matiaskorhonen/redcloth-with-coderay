@@ -5,7 +5,7 @@ module RedclothCoderay
   CODERAY_OPTIONS = {:wrap => nil, :css => :class}
   
   def preprocess_with_syntax_highlighting(text)
-    text.gsub!(SOURCE_TAG_REGEXP) do |m|
+    text.gsub(SOURCE_TAG_REGEXP) do |m|
       all_of_it = $~[1]
       whitespace_before = $~[2]
       lang = ($~[3] || :ruby).to_sym
