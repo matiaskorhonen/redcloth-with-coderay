@@ -1,16 +1,16 @@
 module RedclothCoderay
   SINGLE_LINE = '<code class="inline_code">%s</code>'
   MULTI_LINE = '<pre><code class="multiline_code">%s</code></pre>'
-  SOURCE_TAG_REGEXP = /(([\t\n])?<source(?:\:([a-z]+))?>(.+?)<\/source>([\t\n])?)/m
+  SOURCE_TAG_REGEXP = /(([\t\n])?<(source|code)(?:\:([a-z]+))?>(.+?)<\/\3>([\t\n])?)/m
   CODERAY_OPTIONS = {:wrap => nil, :css => :class}
   
   def preprocess_with_syntax_highlighting(text)
     text.gsub(SOURCE_TAG_REGEXP) do |m|
       all_of_it = $~[1]
       whitespace_before = $~[2]
-      lang = ($~[3] || :ruby).to_sym
-      code = $~[4].strip
-      whitespace_after = $~[5]
+      lang = ($~[4] || :ruby).to_sym
+      code = $~[5].strip
+      whitespace_after = $~[6]
       
       wrap_in = all_of_it =~ /\n/ ? MULTI_LINE : SINGLE_LINE
       highlighted = wrap_in % CodeRay.scan(code, lang).div(CODERAY_OPTIONS)
