@@ -6,6 +6,7 @@ A short summary of what you can do:
 
 * <source>foo</source> - Use this tag to produce CodeRay highlighted HTML for the contents within that tag. The language defaults to Ruby.
 * <source:css>foo</source> - Highlight as usual, but highlight as CSS. Supports everything CodeRay supports. Refer to the CodeRay documentation for a list of supported languages.
+* You can also use the <code> tag.
 
 == Installing
 

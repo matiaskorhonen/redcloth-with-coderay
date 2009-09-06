@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "redclothcoderay"
-  s.version = "0.3.0"
+  s.version = "0.3.1"
   s.date = "2009-05-06"
   s.authors = ["August Lilleaas"]
   s.email = "augustlilleaas@gmail.com"
