@@ -19,7 +19,7 @@ class PluginTest < Test::Unit::TestCase
     result = RedCloth.new(text).to_html
     
     assert result.include?(%Q{<strong>textilized</strong>})
-    assert result.include?(%Q{<pre><code class="multiline_code">})
+    assert result.include?(%Q{<div class="multiline_code">})
   end
   
   def test_one_liner_multiline_code
@@ -32,7 +32,7 @@ class PluginTest < Test::Unit::TestCase
     result = RedCloth.new(text).to_html
     
     assert result.include?(%Q{<strong>textilized</strong>})
-    assert result.include?(%Q{<pre><code class=\"multiline_code\">hello_to_you</code></pre>})
+    assert result.include?(%Q{<div class=\"multiline_code\">hello_to_you</div>})
   end
   
   def test_parsing_other_languages
