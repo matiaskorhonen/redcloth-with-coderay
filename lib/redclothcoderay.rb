@@ -1,6 +1,6 @@
 module RedclothCoderay
-  SINGLE_LINE = '<code class="inline_code">%s</code>'
-  MULTI_LINE = '<pre><code class="multiline_code">%s</code></pre>'
+  SINGLE_LINE = '<div class="inline_code">%s</div>'
+  MULTI_LINE = '<div class="multiline_code">%s</div>'
   SOURCE_TAG_REGEXP = /(([\t\n])?<source(?:\:([a-z]+))?>(.+?)<\/source>([\t\n])?)/m
   CODERAY_OPTIONS = {:wrap => nil, :css => :class}
   
