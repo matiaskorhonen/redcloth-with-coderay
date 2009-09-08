@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'RedCloth'
 require 'coderay'
 require 'test/unit'
 
