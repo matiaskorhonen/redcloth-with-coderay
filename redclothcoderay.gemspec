@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.date = Time.now
   s.authors = ['August Lilleaas', 'Matias Korhonen']
   s.email = "augustlilleaas@gmail.com"
-  s.files = ["lib", "lib/redclothcoderay.rb", "MIT-LICENSE", "Rakefile", "README.rdoc", "redclothcoderay.gemspec", "test", "test/coderay_options_test.rb", "test/redclothcoderay_test.rb", "test/test_helper.rb"]
+  s.files = Dir["**/*"].select {|d| File.file?(d) }
   s.rubyforge_project = "redclothcoderay"
   s.has_rdoc = true
   s.add_dependency('RedCloth')
