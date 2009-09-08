@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name = "redclothcoderay"
-  s.version = "0.3.0"
-  s.date = "2009-05-06"
-  s.authors = ["August Lilleaas"]
+  s.version = "0.3.1"
+  s.date = Time.now
+  s.authors = ['August Lilleaas', 'Matias Korhonen']
   s.email = "augustlilleaas@gmail.com"
   s.rubyforge_project = "redclothcoderay"
   s.has_rdoc = true
@@ -12,4 +12,12 @@ Gem::Specification.new do |s|
   s.homepage = "http://redclothcoderay.rubyforge.org"
   s.extensions = ["Rakefile"]
   s.files = Dir["**/*"].select {|d| File.file?(d) }
+  s.description = <<-EOF
+    Adds CodeRay syntax highlighting support to RedCloth, with a ‘source’ tag. See the examples below.
+    
+    A short summary of what you can do:
+    
+      * <source>foo</source> - Use this tag to produce CodeRay highlighted HTML for the contents within that tag. The language defaults to Ruby.
+      * <source:css>foo</source> - Highlight as usual, but highlight as CSS. Supports everything CodeRay supports. Refer to the CodeRay documentation for a list of supported languages.
+  EOF
 end
