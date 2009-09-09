@@ -12,6 +12,5 @@ Gem::Specification.new do |s|
   s.add_dependency('coderay')
   s.summary = "Integrates CodeRay with RedCloth by adding a <source> tag."
   s.homepage = "http://redclothcoderay.rubyforge.org"
-  s.files = Dir["**/*"].select {|d| File.file?(d) }
   s.description = %q{Adds CodeRay syntax highlighting support to RedCloth, with a ‘source’ tag.}
 end
