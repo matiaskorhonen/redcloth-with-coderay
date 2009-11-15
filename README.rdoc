@@ -38,21 +38,27 @@ You can specify the CodeRay options, too (defaults to RedclothCoderay::CODERAY_O
 This input:
 
  Hello, this is *textilized*. It also has <source>@inline_code_examples</source>!
- 
+
  What about a multi-line code sample?
- 
+
  <source:html>
  <h1>Hello, world!</h1>
  </source>
-    
-produces this output (indented for clarity):
 
- <p>Hello, this is <strong>textilized</strong>. It also has <code class="inline_code">
-   <span class="iv">@inline_code_examples</span>
- </code>!</p>
- 
- <p>What about a multi-line code sample?</p>
- 
- <pre><code class=\"multiline_code\">
-   <span class=\"ta\">&amp;lt;h1&amp;gt;</span>Hello, world!<span class=\"ta\">&amp;lt;/h1&amp;gt;</span>
- </code></pre>
+Produces this output (indented for clarity):
+
+ <p>
+     Hello, this is <strong>textilized</strong>. It also has
+     <code class="inline_code">
+         <span class="iv">
+             @inline_code_examples
+         </span>
+     </code>!
+ </p>
+
+ <p>
+     What about a multi-line code sample?
+ </p>
+ <div class="multiline_code">
+     <span class="ta">&lt;h1&gt;</span>Hello, world!<span class="ta">&lt;/h1&gt;</span>
+ </div>

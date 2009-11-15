@@ -3,7 +3,7 @@ module RedclothCoderay
   MULTI_LINE = '<div class="multiline_code">%s</div>'
   SOURCE_TAG_REGEXP = /(([\t\n])?<source(?:\:([a-z]+))?>(.+?)<\/source>([\t\n])?)/m
   CODERAY_OPTIONS = {:wrap => nil, :css => :class}
-  
+
   def preprocess_with_syntax_highlighting(text)
     text.gsub(SOURCE_TAG_REGEXP) do |m|
       all_of_it = $~[1]
@@ -11,14 +11,20 @@ module RedclothCoderay
       lang = ($~[3] || :ruby).to_sym
       code = $~[4].strip
       whitespace_after = $~[5]
-      
+
       wrap_in = all_of_it =~ /\n/ ? MULTI_LINE : SINGLE_LINE
-      highlighted = wrap_in % CodeRay.scan(code, lang).div(CODERAY_OPTIONS)
-      
+      if all_of_it =~ /\n/
+        highlighted = wrap_in % CodeRay.scan(code, lang).div(CODERAY_OPTIONS)
+      else
+        options = CODERAY_OPTIONS
+        options[:line_numbers] = nil
+        highlighted = wrap_in % CodeRay.scan(code, lang).span(options)
+      end
+
       "#{whitespace_before}<notextile>#{highlighted}</notextile>#{whitespace_after}"
     end
   end
-  
+
   def self.coderay_options(options)
     CODERAY_OPTIONS.replace(options)
   end
@@ -28,7 +34,7 @@ redcloth_thingie = RedCloth::VERSION.to_s < "4" ? RedCloth : RedCloth::TextileDo
 
 redcloth_thingie.class_eval {
   alias_method :_initialize, :initialize
-  
+
   def initialize(text, *args)
     text = preprocess_with_syntax_highlighting(text)
     _initialize(text, *args)
